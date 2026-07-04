@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>PORTAL — a weird internet dream</title>
+  <meta name="description" content="A retro-futuristic creative studio. Travel through an old computer into an immersive digital world." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <!-- Boot / power-on gate -->
+  <div id="gate">
+    <div class="crt-frame">
+      <div class="gate-screen">
+        <pre id="boot-log" class="boot-log"></pre>
+        <button id="power-btn" class="power-btn" aria-label="Power on">
+          <span class="power-btn-ring"></span>
+          <span class="power-btn-label">PRESS TO POWER ON</span>
+        </button>
+      </div>
+    </div>
+    <p class="gate-hint">turn your sound on. this is a trip.</p>
+  </div>
+
+  <!-- Scroll track that drives the camera -->
+  <main id="scroll-track">
+    <section class="act" data-act="0" id="act-0"></section>
+    <section class="act" data-act="1" id="act-1"></section>
+    <section class="act" data-act="2" id="act-2"></section>
+    <section class="act" data-act="3" id="act-3"></section>
+    <section class="act" data-act="4" id="act-4"></section>
+  </main>
+
+  <!-- Fixed DOM overlay for text choreography -->
+  <div id="overlay">
+    <div class="progress-rail" aria-hidden="true">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <div class="hud" id="hud">
+      <span id="hud-signal">SIGNAL: LOCKED</span>
+      <span id="hud-depth">DEPTH 000.0m</span>
+    </div>
+
+    <div class="copy copy--act0" id="copy-0">
+      <p class="eyebrow">STUDIO.EXE</p>
+      <h1>YOU FOUND<br />AN OLD MACHINE.</h1>
+      <p class="sub">scroll to wake it up</p>
+    </div>
+
+    <div class="copy copy--act1" id="copy-1">
+      <h2>THE SCREEN<br />IS A DOOR.</h2>
+      <p class="sub">something on the other side is loading</p>
+    </div>
+
+    <div class="copy copy--act2" id="copy-2">
+      <h2>WELCOME TO<br />THE DREAM LAYER</h2>
+      <p class="sub">click what glows. it wants to be found.</p>
+    </div>
+
+    <div class="copy copy--act3" id="copy-3">
+      <h2>THIS IS WHERE<br />WE MAKE THINGS</h2>
+      <p class="sub">a studio, hiding inside the static</p>
+      <button class="cta" id="cta-enter">ENTER THE STUDIO</button>
+    </div>
+
+    <div class="copy copy--act4" id="copy-4">
+      <p class="eyebrow">SIGNAL LOST</p>
+      <h2>SAY HELLO&nbsp;$</h2>
+      <a class="contact-link" href="mailto:hello@portal.studio">hello@portal.studio</a>
+      <div class="reveal-panel" id="reveal-panel">
+        <p id="reveal-text"></p>
+      </div>
+    </div>
+
+    <div class="scroll-cue" id="scroll-cue">
+      <span>scroll</span>
+      <span class="scroll-cue-line"></span>
+    </div>
+  </div>
+
+  <div id="grain"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
